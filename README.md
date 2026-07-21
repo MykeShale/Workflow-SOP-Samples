@@ -1,90 +1,28 @@
-# SkyLution Workflow & SOP Samples
+# SkyLution Workflow & SOP Portfolio
 
-This repository contains real-world Standard Operating Procedures (SOPs), process maps, and client handover guides written for non-technical audiences. These documents are based on actual systems built for SkyLution clients, demonstrating the ability to translate complex technical workflows into actionable business operations documentation.
+Welcome! This repository demonstrates a critical but often overlooked skill in operations and automation: **the ability to document complex systems clearly enough that a non-technical person can confidently run and maintain them.**
+
+When building automations, the job isn't finished when the code deploys. The true measure of a successful system is whether it can survive contact with the daily operations team. This portfolio showcases real-world documentation created for SkyLution clients, bridging the gap between technical architecture and day-to-day business execution.
 
 ## Projects Included
 
-### 1. TawiLend Loan Management System
-A comprehensive SaaS platform for microfinance institutions to manage loan originations, approvals, and servicing.
+Explore the following projects to see how complex workflows are translated into actionable, easy-to-follow documentation:
 
-**Deliverables:**
-- [Standard Operating Procedure (SOP) / Runbook](./TawiLend/SOP_Runbook.md)
-- [Client Handover Guide](./TawiLend/Client_Handover_Guide.md)
+### 1. [TawiLend Loan Management System](./TawiLend/)
+*A comprehensive SaaS platform for microfinance institutions that automates loan originations, underwriting approvals, and servicing.*
 
-**Process Maps:**
+### 2. [SkyLution Property Management System (BomaSuite)](./BomaSuite/)
+*An automated tenant portal and property management backend for handling digital onboarding, M-Pesa rent collection, and maintenance tracking.*
 
-*Current-State Process Map (Manual Process)*
-```mermaid
-flowchart TD
-    A[Applicant walks into branch] --> B[Fills out paper loan application]
-    B --> C[Submits physical documents]
-    C --> D[Loan Officer manually enters data into Excel]
-    D --> E{Manual Credit Check}
-    E -->|Approved| F[Manager signs paper approval]
-    E -->|Rejected| G[Mail rejection letter]
-    F --> H[Finance initiates manual bank transfer]
-    H --> I[Monthly tracking in spreadsheets]
-    I --> J{Missed Payment?}
-    J -->|Yes| K[Staff manually calls borrower]
-    J -->|No| L[Mark paid in spreadsheet]
-```
+*Note: Each project folder contains Standard Operating Procedures (SOPs), Client Handover Guides, and before-and-after Process Maps.*
 
-*Future-State Workflow (Automated System)*
-```mermaid
-flowchart TD
-    A[Applicant registers on Member Portal] --> B[Completes digital application & uploads docs]
-    B --> C[System auto-verifies identity & documents]
-    C --> D{Automated Credit Scoring Engine}
-    D -->|High Score| E[Auto-Approval via rules engine]
-    D -->|Borderline| F[Flags for Manual Review by Officer]
-    D -->|Low Score| G[Auto-Rejection & Email Notification]
-    E --> H[Automated Disbursement via Payment API]
-    F -->|Approved| H
-    F -->|Rejected| G
-    H --> I[System auto-generates payment schedule]
-    I --> J{Payment Due Date Approaching}
-    J -->|Reminder| K[Auto-SMS/Email Reminder Sent]
-    J -->|Paid via Portal| L[Auto-reconciliation in Ledger]
-    J -->|Missed| M[Auto-apply penalty & escalate to Collections Dashboard]
-```
+## Why This Matters
+
+In the world of automation and operations, high-quality documentation is just as important as the underlying code. Here is why this discipline is essential:
+
+* **Repeatable Systems:** Well-documented processes ensure that anyone on the team can execute a task with consistent quality, eliminating guesswork and minimizing human error.
+* **Safe Handovers:** Clear runbooks and handover guides make onboarding new staff seamless and protect clients from operational disruption when personnel changes occur.
+* **Reduced Builder Dependency:** Systems should empower the business, not create bottlenecks. Good documentation ensures the original builder or developer isn't a single point of failure, allowing them to focus on new initiatives rather than endless support requests.
 
 ---
-
-### 2. SkyLution Property Management System (BomaSuite)
-An automated system for real estate managers to handle tenant onboarding, rent collection, and maintenance requests.
-
-**Deliverables:**
-- [Standard Operating Procedure (SOP) / Runbook](./BomaSuite/BomaSuite_SOP_Runbook.md)
-- [Client Handover Guide](./BomaSuite/BomaSuite_Client_Handover_Guide.md)
-
-**Process Maps:**
-
-*Current-State Process Map (Manual Process)*
-```mermaid
-flowchart TD
-    A[Prospective Tenant tours property] --> B[Given paper rental application]
-    B --> C[Returns application with physical check for deposit]
-    C --> D[Caretaker manually runs background check or references]
-    D --> E{Approved?}
-    E -->|Yes| F[Landlord prints lease agreement]
-    E -->|No| G[Caretaker calls to reject]
-    F --> H[In-person meeting to sign lease]
-    H --> I[Tenant moves in]
-    I --> J[Tenant mails or drops off monthly rent check/cash]
-    J --> K[Manager physically deposits cash at bank]
-    K --> L[Manual entry into accounting spreadsheet]
-```
-
-*Future-State Workflow (Automated System)*
-```mermaid
-flowchart TD
-    A[Prospective Tenant tours property] --> B[Manager creates Tenant invite in BomaSuite]
-    B --> C[System emails Magic Link to Tenant]
-    C --> D[Tenant completes profile & sets up Portal Account]
-    D --> E[System auto-generates digital Lease Agreement]
-    E --> F[Tenant signs digitally via e-Signature API]
-    F --> G[Tenant pays deposit & rent via M-Pesa]
-    G --> H[BomaSuite C2B integration captures M-Pesa payment]
-    H --> I[System auto-reconciles ledger & updates Landlord Dashboard]
-    I --> J[System auto-generates monthly rent & water invoices]
-```
+*Feel free to click into the project folders above to read the actual Client Handover Guides, SOPs, and Process Maps.*
